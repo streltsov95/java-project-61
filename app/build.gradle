@@ -25,3 +25,6 @@ application {
     mainClass = 'hexlet.code.App'
 }
 
+compileJava {
+    options.release = 17
+}
