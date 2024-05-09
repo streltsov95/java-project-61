@@ -21,7 +21,7 @@ public class Calc {
         var firstOperand = new Random().nextInt(101);
         var secondOperand = new Random().nextInt(101);
         var operator = getOperator();
-        var expression = firstOperand + String.valueOf(operator) + secondOperand;
+        var expression = firstOperand + " " + operator + " " + secondOperand;
         var correctAnswer = calculateCorrectAnswer(firstOperand, secondOperand, operator);
         return new String[]{expression, String.valueOf(correctAnswer)};
     }
