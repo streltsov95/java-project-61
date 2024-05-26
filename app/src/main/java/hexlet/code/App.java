@@ -22,35 +22,27 @@ public class App {
         switch (choice) {
             case "0":
                 System.out.println("Goodbye!");
-                scanner.close();
                 break;
             case "1":
                 Cli.greeting();
-                scanner.close();
                 break;
             case "2":
                 Even.runEvenGame();
-                scanner.close();
                 break;
             case "3":
                 Calc.runCalcGame();
-                scanner.close();
                 break;
             case "4":
                 GCD.runGCDGame();
-                scanner.close();
                 break;
             case "5":
                 Progression.runProgressionGame();
-                scanner.close();
                 break;
             case "6":
                 Prime.runPrimeGame();
-                scanner.close();
                 break;
             default:
                 System.out.println("You entered a non-existent selection value");
-                scanner.close();
                 break;
         }
     }
