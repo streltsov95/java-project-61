@@ -6,7 +6,7 @@ public class Engine {
     public static final int ROUNDS_QUANTITY = 3;
 
     public static void run(String[][] gamesDataset, String rules) {
-        Cli.greeting();
+        String username = Cli.greeting();
         System.out.println(rules);
         Scanner scanner = new Scanner(System.in);
         for (int round = 0; round < ROUNDS_QUANTITY; round++) {
@@ -21,10 +21,10 @@ public class Engine {
                 System.out.println("\'" + answer + "\'"
                         + " is wrong answer ;(. Correct answer was "
                         + "\'" + correctAnswer + "\'.");
-                System.out.println("Let's try again, " + Cli.userName + "!");
+                System.out.println("Let's try again, " + username + "!");
                 return;
             }
         }
-        System.out.println("Congratulations, " + Cli.userName + "!");
+        System.out.println("Congratulations, " + username + "!");
     }
 }
