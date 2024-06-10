@@ -2,8 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.Arrays;
 import java.util.Random;
-import java.util.StringJoiner;
 
 public class Progression {
     public static final String RULES = "What number is missing in the progression?";
@@ -19,34 +19,35 @@ public class Progression {
     }
 
     private static String[] roundsDatasetGenerator() {
-        var progressionString = progressionGenerator();
-        var progressionArray = progressionString.split(" ");
-        var hiddenNumber = new Random().nextInt(progressionArray.length);
-        var question = hideNumber(progressionString, hiddenNumber);
-        var correctAnswer = progressionArray[hiddenNumber];
+        int firstNumber = new Random().nextInt(1, 101);
+        int progressionLength = new Random().nextInt(5, 11);
+        int progressionStep = new Random().nextInt(2, 16);
+        int hiddenNumber = new Random().nextInt(progressionLength);
+
+        String[] progression = progressionGenerator(firstNumber, progressionLength, progressionStep);
+        String[] modifiedProgression = hideNumber(progression, hiddenNumber);
+
+        String question = String.join(" ", modifiedProgression);
+        String correctAnswer = progression[hiddenNumber];
+
         return new String[]{question, correctAnswer};
     }
 
-    private static String progressionGenerator() {
-        int progressionLength = new Random().nextInt(5, 11);
-        int progressionStep = new Random().nextInt(2, 16);
-        int firstNumber = new Random().nextInt(1, 101);
-        int nextNumber = firstNumber + progressionStep;
-        StringBuilder progression = new StringBuilder(String.valueOf(firstNumber));
-        for (var i = 1; i < progressionLength; i++) {
-            progression.append(" ").append(nextNumber);
-            nextNumber += progressionStep;
+    private static String[] progressionGenerator(int firstNumber, int length, int step) {
+        String[] progression = new String[length];
+        int accumulator = firstNumber;
+        for (var i = 0; i < length; i++) {
+            progression[i] = String.valueOf(accumulator);
+            accumulator += step;
         }
-        return progression.toString();
+
+        return progression;
     }
 
-    private static String hideNumber(String progression, int position) {
-        var numbers = progression.split(" ");
-        numbers[position] = "..";
-        StringJoiner modifiedProgression = new StringJoiner(" ");
-        for (var number : numbers) {
-            modifiedProgression.add(number);
-        }
-        return modifiedProgression.toString();
+    private static String[] hideNumber(String[] progression, int hiddenPosition) {
+        String[] modifiedProgression = Arrays.copyOf(progression, progression.length);
+        modifiedProgression[hiddenPosition] = "..";
+
+        return modifiedProgression;
     }
 }
