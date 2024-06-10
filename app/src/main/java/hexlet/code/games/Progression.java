@@ -1,12 +1,23 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Arrays;
 import java.util.Random;
 
 public class Progression {
     public static final String RULES = "What number is missing in the progression?";
+
+    private static final int NUMBER_LEAST_VALUE = 1;
+    private static final int NUMBER_UPPER_BOUND = 101;
+
+    private static final int PROGRESSION_LENGTH_LEAST_VALUE = 5;
+    private static final int PROGRESSION_LENGTH_UPPER_BOUND = 11;
+
+    private static final int PROGRESSION_STEP_LEAST_VALUE = 2;
+    private static final int PROGRESSION_STEP_UPPER_BOUND = 16;
+
 
     public static void runProgressionGame() {
         var roundsQuantity = Engine.ROUNDS_QUANTITY;
@@ -19,9 +30,9 @@ public class Progression {
     }
 
     private static String[] roundsDatasetGenerator() {
-        int firstNumber = new Random().nextInt(1, 101);
-        int progressionLength = new Random().nextInt(5, 11);
-        int progressionStep = new Random().nextInt(2, 16);
+        int firstNumber = Utils.getRandomNumeric(NUMBER_LEAST_VALUE, NUMBER_UPPER_BOUND);
+        int progressionLength = Utils.getRandomNumeric(PROGRESSION_LENGTH_LEAST_VALUE, PROGRESSION_LENGTH_UPPER_BOUND);
+        int progressionStep = Utils.getRandomNumeric(PROGRESSION_STEP_LEAST_VALUE, PROGRESSION_STEP_UPPER_BOUND);
         int hiddenNumber = new Random().nextInt(progressionLength);
 
         String[] progression = progressionGenerator(firstNumber, progressionLength, progressionStep);
