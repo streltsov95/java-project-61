@@ -23,11 +23,11 @@ public class GCD {
         var number1 = Utils.getRandomNumeric(LEAST_VALUE, UPPER_BOUND);
         var number2 = Utils.getRandomNumeric(LEAST_VALUE, UPPER_BOUND);
         var question = number1 + " " + number2;
-        var correctAnswer = gcd(number1, number2);
+        var correctAnswer = calculateGcd(number1, number2);
         return new String[]{question, String.valueOf(correctAnswer)};
     }
 
-    private static int gcd(int number1, int number2) {
+    private static int calculateGcd(int number1, int number2) {
         while (number1 != 0 && number2 != 0) {
             if (number1 > number2) {
                 number1 %= number2;
