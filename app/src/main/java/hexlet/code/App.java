@@ -34,7 +34,7 @@ public class App {
                 Even.run();
                 break;
             case "3":
-                Calc.runCalcGame();
+                Calc.run();
                 break;
             case "4":
                 GCD.runGCDGame();

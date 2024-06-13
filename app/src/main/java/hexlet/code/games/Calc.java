@@ -12,7 +12,7 @@ public class Calc {
 
     private static final char[] OPERATORS = {'+', '-', '*'};
 
-    public static void runCalcGame() {
+    public static void run() {
         var roundsCount = Engine.ROUNDS_COUNT;
         var gamesDataset = new String[roundsCount][];
         for (var round = 0; round < roundsCount; round++) {
