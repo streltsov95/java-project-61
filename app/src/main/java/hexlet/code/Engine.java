@@ -9,9 +9,9 @@ public class Engine {
         String username = Cli.greeting();
         System.out.println(rules);
         Scanner scanner = new Scanner(System.in);
-        for (int round = 0; round < ROUNDS_COUNT; round++) {
-            String question = gamesDataset[round][0];
-            String correctAnswer = gamesDataset[round][1];
+        for (String[] gameData : gamesDataset) {
+            String question = gameData[0];
+            String correctAnswer = gameData[1];
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String answer = scanner.next();
