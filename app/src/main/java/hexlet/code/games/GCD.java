@@ -9,7 +9,7 @@ public class GCD {
     private static final int LEAST_VALUE = 1;
     private static final int UPPER_BOUND = 101;
 
-    public static void runGCDGame() {
+    public static void run() {
         var roundsCount = Engine.ROUNDS_COUNT;
         var gamesDataset = new String[roundsCount][];
         for (var round = 0; round < roundsCount; round++) {

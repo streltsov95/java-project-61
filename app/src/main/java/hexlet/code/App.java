@@ -37,7 +37,7 @@ public class App {
                 Calc.run();
                 break;
             case "4":
-                GCD.runGCDGame();
+                GCD.run();
                 break;
             case "5":
                 Progression.runProgressionGame();
