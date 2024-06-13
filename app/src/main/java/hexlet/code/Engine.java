@@ -3,13 +3,13 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static final int ROUNDS_QUANTITY = 3;
+    public static final int ROUNDS_COUNT = 3;
 
     public static void run(String[][] gamesDataset, String rules) {
         String username = Cli.greeting();
         System.out.println(rules);
         Scanner scanner = new Scanner(System.in);
-        for (int round = 0; round < ROUNDS_QUANTITY; round++) {
+        for (int round = 0; round < ROUNDS_COUNT; round++) {
             String question = gamesDataset[round][0];
             String correctAnswer = gamesDataset[round][1];
             System.out.println("Question: " + question);

@@ -10,7 +10,7 @@ public class GCD {
     private static final int UPPER_BOUND = 101;
 
     public static void runGCDGame() {
-        var roundsQuantity = Engine.ROUNDS_QUANTITY;
+        var roundsQuantity = Engine.ROUNDS_COUNT;
         var gamesDataset = new String[roundsQuantity][];
         for (var round = 0; round < roundsQuantity; round++) {
             gamesDataset[round] = roundsDatasetGenerator();
