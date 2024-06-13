@@ -8,6 +8,6 @@ public class Utils {
     }
 
     public static int getRandomNumeric(int upperBound) {
-        return new Random().nextInt(upperBound);
+        return getRandomNumeric(0, upperBound);
     }
 }
