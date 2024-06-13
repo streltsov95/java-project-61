@@ -36,10 +36,9 @@ public class Progression {
         int hiddenNumber = new Random().nextInt(progressionLength);
 
         String[] progression = progressionGenerator(firstNumber, progressionLength, progressionStep);
-        String[] modifiedProgression = hideNumber(progression, hiddenNumber);
-
-        String question = String.join(" ", modifiedProgression);
         String correctAnswer = progression[hiddenNumber];
+        progression[hiddenNumber] = "..";
+        String question = String.join(" ", progression);
 
         return new String[]{question, correctAnswer};
     }
@@ -53,12 +52,5 @@ public class Progression {
         }
 
         return progression;
-    }
-
-    private static String[] hideNumber(String[] progression, int hiddenPosition) {
-        String[] modifiedProgression = Arrays.copyOf(progression, progression.length);
-        modifiedProgression[hiddenPosition] = "..";
-
-        return modifiedProgression;
     }
 }
