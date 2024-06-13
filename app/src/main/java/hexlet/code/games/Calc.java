@@ -11,9 +11,9 @@ public class Calc {
     private static final int UPPER_BOUND = 101;
 
     public static void runCalcGame() {
-        var roundsQuantity = Engine.ROUNDS_COUNT;
-        var gamesDataset = new String[roundsQuantity][];
-        for (var round = 0; round < roundsQuantity; round++) {
+        var roundsCount = Engine.ROUNDS_COUNT;
+        var gamesDataset = new String[roundsCount][];
+        for (var round = 0; round < roundsCount; round++) {
             gamesDataset[round] = roundsDatasetGenerator();
         }
 
