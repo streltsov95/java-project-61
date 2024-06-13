@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Progression {
@@ -19,7 +18,7 @@ public class Progression {
     private static final int PROGRESSION_STEP_UPPER_BOUND = 16;
 
 
-    public static void runProgressionGame() {
+    public static void run() {
         var roundsCount = Engine.ROUNDS_COUNT;
         var gamesDataset = new String[roundsCount][];
         for (var round = 0; round < roundsCount; round++) {

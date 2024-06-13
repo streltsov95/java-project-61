@@ -40,7 +40,7 @@ public class App {
                 GCD.run();
                 break;
             case "5":
-                Progression.runProgressionGame();
+                Progression.run();
                 break;
             case "6":
                 Prime.run();
