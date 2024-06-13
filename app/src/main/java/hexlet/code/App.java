@@ -43,7 +43,7 @@ public class App {
                 Progression.runProgressionGame();
                 break;
             case "6":
-                Prime.runPrimeGame();
+                Prime.run();
                 break;
             default:
                 System.out.println("You entered a non-existent selection value");
