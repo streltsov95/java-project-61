@@ -31,7 +31,7 @@ public class App {
                 Cli.greeting();
                 break;
             case "2":
-                Even.runEvenGame();
+                Even.run();
                 break;
             case "3":
                 Calc.runCalcGame();
