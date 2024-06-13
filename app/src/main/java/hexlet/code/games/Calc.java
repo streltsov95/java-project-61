@@ -10,6 +10,8 @@ public class Calc {
 
     private static final int UPPER_BOUND = 101;
 
+    private static final char[] OPERATORS = {'+', '-', '*'};
+
     public static void runCalcGame() {
         var roundsCount = Engine.ROUNDS_COUNT;
         var gamesDataset = new String[roundsCount][];
@@ -30,8 +32,7 @@ public class Calc {
     }
 
     private static char getOperator() {
-        var operators = new char[]{'+', '-', '*'};
-        return operators[new Random().nextInt(operators.length)];
+        return OPERATORS[new Random().nextInt(OPERATORS.length)];
     }
 
     private static int calculateCorrectAnswer(int firstOperand, int secondOperand, char operator) {
