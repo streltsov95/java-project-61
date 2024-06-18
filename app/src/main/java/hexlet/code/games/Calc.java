@@ -16,13 +16,13 @@ public class Calc {
         var roundsCount = Engine.ROUNDS_COUNT;
         var gamesDataset = new String[roundsCount][];
         for (var round = 0; round < roundsCount; round++) {
-            gamesDataset[round] = roundsDatasetGenerator();
+            gamesDataset[round] = generateGamesData();
         }
 
         Engine.run(gamesDataset, RULES);
     }
 
-    private static String[] roundsDatasetGenerator() {
+    private static String[] generateGamesData() {
         var firstOperand = Utils.getRandomNumeric(UPPER_BOUND);
         var secondOperand = Utils.getRandomNumeric(UPPER_BOUND);
         var operator = getOperator();
