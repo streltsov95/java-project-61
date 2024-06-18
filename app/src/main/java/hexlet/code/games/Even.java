@@ -12,13 +12,13 @@ public class Even {
         var roundsCount = Engine.ROUNDS_COUNT;
         var gamesDataset = new String[roundsCount][];
         for (var round = 0; round < roundsCount; round++) {
-            gamesDataset[round] = roundsDatasetGenerator();
+            gamesDataset[round] = generateGamesData();
         }
 
         Engine.run(gamesDataset, RULES);
     }
 
-    private static String[] roundsDatasetGenerator() {
+    private static String[] generateGamesData() {
         var number = Utils.getRandomNumeric(UPPER_BOUND);
         var correctAnswer = isEven(number) ? "yes" : "no";
         return new String[]{String.valueOf(number), correctAnswer};
